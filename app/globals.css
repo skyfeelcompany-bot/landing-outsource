@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #07080F;
+  --color-brand-surface: #0E1120;
+  --color-brand-elevated: #151929;
+  --color-brand-border: #1F2438;
+  --color-brand-gold: #C9A84C;
+  --color-brand-gold-light: #E8C97A;
+  --color-brand-text: #EEF0F8;
+  --color-brand-muted: #6E728A;
+  --color-brand-success: #3DB88A;
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-brand-bg);
+    color: var(--color-brand-text);
+  }
+}
