@@ -1,22 +1,32 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 
 const TEAM = [
   {
     name: "Асыл",
-    initials: "А",
+    image: "/images/asyl.png",
     role: "Специалист по праву",
     badge: "Право",
     bio: "Опыт в гражданских спорах, взыскании долгов и нормативном соответствии. Ведет дела от первой консультации до решения суда.",
+    pdfUrl: "/docs/asyl.pdf",
   },
   {
     name: "Руслан",
-    initials: "Р",
+    image: "/images/ruslan.png",
     role: "Специалист по праву",
     badge: "Право",
     bio: "Специализируется на исполнительном производстве, процессуальной документации и защите клиентов от действий регуляторов.",
+    pdfUrl: "/docs/ruslan.pdf",
+  },
+  {
+    name: "Канагат",
+    image: "/images/kanagat.png",
+    role: "Юрист",
+    badge: "Право",
+    bio: "Эксперт в области корпоративного права и судебного представительства. Обеспечивает комплексную правовую поддержку бизнеса и защиту интересов в переговорах.",
+    pdfUrl: "/docs/kanagat.pdf",
   },
 ];
 
@@ -32,12 +42,22 @@ const item: Variants = {
 
 export default function Team() {
   return (
-    <section id="team" className="py-24 bg-brand-bg relative">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="team" className="py-24 bg-brand-bg relative overflow-hidden">
+      {/* Slightly blurred background image */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img 
+          src="/images/team-bg-v2.jpg" 
+          alt="Team background" 
+          className="w-full h-full object-cover blur-[1px] opacity-60 grayscale-[10%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-bg via-transparent to-brand-bg" />
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, margin: "-20px" }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
@@ -53,51 +73,42 @@ export default function Team() {
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, margin: "-20px" }}
           className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-fr"
         >
           {TEAM.map((member) => (
             <motion.div
               key={member.name}
               variants={item}
-              className="bg-brand-surface rounded-2xl p-8 border border-brand-border hover:border-brand-gold hover:shadow-[0_0_20px_rgba(201,168,76,0.15)] transition-all duration-300 flex flex-col items-center text-center group"
+              className="bg-brand-surface/30 backdrop-blur-md rounded-2xl p-8 border border-brand-border hover:border-brand-gold hover:shadow-[0_0_20px_rgba(201,168,76,0.15)] transition-all duration-300 flex flex-col items-center text-center group"
             >
-              <div className="w-20 h-20 rounded-full bg-[#1A1F33] border border-brand-border flex items-center justify-center mb-6 group-hover:border-brand-gold transition-colors">
-                <span className="font-display text-3xl text-brand-gold">{member.initials}</span>
+              <div className="w-24 h-24 rounded-full overflow-hidden border border-brand-border flex items-center justify-center mb-6 group-hover:border-brand-gold transition-colors shadow-2xl bg-brand-bg">
+                <img 
+                  src={member.image} 
+                  alt={member.name} 
+                  className="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" 
+                />
               </div>
               <h3 className="text-xl font-semibold text-brand-text mb-2">{member.name}</h3>
               <div className="px-3 py-1 bg-brand-gold/10 border border-brand-gold/20 text-brand-gold text-xs font-semibold rounded-full mb-6 relative">
                 {member.badge}
               </div>
-              <p className="text-sm text-brand-muted leading-relaxed flex-grow">
+              <p className="text-sm text-brand-muted leading-relaxed mb-8 flex-grow">
                 {member.bio}
               </p>
+              
+              <a 
+                href={member.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-brand-border bg-brand-bg text-brand-text hover:text-brand-gold hover:border-brand-gold/50 transition-all duration-300 group/btn"
+              >
+                <FileText className="w-4 h-4 text-brand-gold" />
+                <span className="text-sm font-medium">Профиль (PDF)</span>
+              </a>
             </motion.div>
           ))}
 
-          {/* Placeholder Card for booking */}
-          <motion.div
-            variants={item}
-            className="relative bg-[#151929]/50 rounded-2xl p-8 border border-brand-gold/30 hover:border-brand-gold transition-all duration-300 flex flex-col items-center text-center justify-center group overflow-hidden"
-          >
-            {/* Pulsing glow animation */}
-            <div className="absolute inset-0 bg-brand-gold/5 blur-2xl rounded-2xl animate-pulse pointer-events-none" />
-
-            <div className="w-20 h-20 rounded-full bg-brand-bg border border-brand-gold/30 flex items-center justify-center mb-6 group-hover:bg-brand-gold/10 transition-colors">
-              <span className="font-display text-3xl text-brand-text/50">?</span>
-            </div>
-            <h3 className="text-xl font-semibold text-brand-text mb-2">Ваш советник</h3>
-            <div className="px-3 py-1 bg-brand-text/5 border border-brand-text/10 text-brand-text/60 text-xs font-semibold rounded-full mb-6">
-              Доступен сейчас
-            </div>
-            <p className="text-sm text-brand-muted/80 leading-relaxed max-w-[240px] mb-8">
-              Расскажите нам о своей ситуации, и мы подберем для вас подходящего специалиста из команды.
-            </p>
-            
-            <a href="#contact" className="inline-flex items-center gap-2 text-brand-gold font-semibold hover:text-brand-gold-light transition-colors mt-auto">
-              Назначить встречу <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </a>
-          </motion.div>
 
         </motion.div>
       </div>

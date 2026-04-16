@@ -17,8 +17,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://outsourcelegal.kz"),
   title: {
-    default: "Аутсорсинг Юридических и Бухгалтерских Услуг | Outsource Legal",
-    template: "%s | Outsource Legal",
+    default: "Аутсорсинг Юридических и Бухгалтерских Услуг | Аутсорсинг VERNO",
+    template: "%s | Аутсорсинг VERNO",
   },
   description: "Комплексная правовая защита и оптимизация бухгалтерии на каждой стадии. Профессиональные юридические и бухгалтерские услуги для бизнеса и частных лиц в Казахстане.",
   keywords: ["юридические услуги", "бухгалтерские услуги", "аутсорсинг", "Казахстан", "открытие ТОО", "налоговая оптимизация", "взыскание задолженности", "юрист", "бухгалтер"],
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Аутсорсинг Юридических и Бухгалтерских Услуг",
     description: "Комплексная правовая защита и оптимизация бухгалтерии на каждой стадии.",
     url: "/",
-    siteName: "Outsource Legal",
+    siteName: "Аутсорсинг VERNO",
     locale: "ru_RU",
     type: "website",
   },
@@ -65,15 +65,15 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LegalService",
-              "name": "Outsource Legal",
+              "name": "Аутсорсинг VERNO",
               "image": "https://outsourcelegal.kz/logo.png",
               "description": "Комплексная правовая защита и оптимизация бухгалтерии на каждой стадии.",
               "address": {
                 "@type": "PostalAddress",
                 "addressCountry": "KZ"
               },
-              "telephone": "+77777777777",
-              "email": "contact@outsourcelegal.kz",
+              "telephone": "+77002676081",
+              "email": "vernokz@list.ru",
               "url": "https://outsourcelegal.kz",
               "priceRange": "$$"
             })

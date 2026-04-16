@@ -6,9 +6,27 @@ import { CheckCircle2, Shield, BarChart3, Lock } from "lucide-react";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-0 w-96 h-96 bg-brand-elevated/40 rounded-full blur-[120px]" />
+      {/* Background Video Decoration */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        {/* Background Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover opacity-60"
+        >
+          <source 
+            src="/videos/hero-flow-man.mp4" 
+            type="video/mp4" 
+          />
+        </video>
+        
+        {/* Full Section Overlays for contrast and professional look */}
+        <div className="absolute inset-0 bg-brand-bg/40" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-brand-bg via-brand-bg/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-bg to-transparent lg:w-[60%]" />
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-brand-gold/5 rounded-full blur-[120px] mix-blend-screen" />
       </div>
 
       <div className="max-w-6xl w-full mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 items-center relative z-10">
@@ -26,13 +44,15 @@ export default function Hero() {
           </div>
 
           <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight mb-6 text-brand-text">
-            Ваши юридические и<br />финансовые задачи —{" "}
-            <span className="relative inline-block overflow-hidden pb-2">
+            Ваши юридические<br />
+            и финансовые{" "}
+            <span className="relative inline-block overflow-hidden pb-1">
+              <span className="relative z-10">задачи — </span>
               <span className="relative z-10 text-brand-gold">решены.</span>
               <motion.div
-                initial={{ left: "-100%" }}
-                animate={{ left: "100%" }}
-                transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 4, ease: "easeInOut" }}
+                initial={{ left: "-150%" }}
+                animate={{ left: "150%" }}
+                transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 3.5, ease: "easeInOut" }}
                 className="absolute top-0 bottom-0 w-1/3 bg-white/30 blur-lg skew-x-12 z-20 pointer-events-none"
               />
             </span>
@@ -82,10 +102,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="relative"
         >
-          {/* Subtle glow behind card */}
-          <div className="absolute inset-0 bg-brand-gold/5 blur-3xl transform scale-110 pointer-events-none" />
-          
-          <div className="relative bg-[#0E1120]/80 backdrop-blur-sm rounded-2xl border border-brand-gold/30 p-8 shadow-2xl">
+          <div className="relative z-10 bg-[#0E1120]/60 backdrop-blur-md rounded-2xl border border-brand-gold/30 p-8 shadow-2xl overflow-hidden group h-full">
+            <div className="absolute inset-0 bg-gradient-to-br from-brand-gold/5 to-transparent pointer-events-none" />
             <h3 className="font-display text-2xl font-semibold mb-6 flex items-center gap-3">
               <span className="w-8 h-[1px] bg-brand-gold" />
               Основная Компетенция

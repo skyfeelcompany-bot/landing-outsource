@@ -28,17 +28,34 @@ const item: Variants = {
 export default function LegalServices() {
   return (
     <section className="py-24 relative overflow-hidden">
-      {/* Background Subtle Line Texture */}
-      <div 
-        className="absolute inset-0 pointer-events-none opacity-[0.03]" 
-        style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 19px, #fff 19px, #fff 20px)' }}
-      />
+      {/* Background Video/Image Decoration */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        {/* Background Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/images/hero.png"
+          className="w-full h-full object-cover grayscale opacity-40"
+        >
+          <source 
+            src="https://assets.mixkit.co/videos/preview/mixkit-lawyer-preparing-documents-at-his-desk-34533-large.mp4" 
+            type="video/mp4" 
+          />
+        </video>
+        
+        {/* Overlays to ensure legibility and integrate with the theme */}
+        <div className="absolute inset-0 bg-brand-bg/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-bg via-transparent to-brand-bg opacity-80" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-gold/10 rounded-full blur-[140px] mix-blend-screen opacity-60" />
+      </div>
       
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, margin: "-20px" }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >

@@ -4,32 +4,31 @@ import { motion } from "framer-motion";
 
 export default function CTABanner() {
   return (
-    <section className="relative py-32 overflow-hidden bg-brand-bg flex items-center justify-center">
-      {/* Animated Gradient Background */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center opacity-30">
+    <section className="relative py-40 overflow-hidden bg-brand-bg flex items-center justify-center">
+      {/* Background Image Layer */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="/images/cta-bg-v2.jpg" 
+          alt="CTA background" 
+          className="w-full h-full object-cover opacity-60 grayscale-[10%]"
+        />
+        <div className="absolute inset-0 bg-brand-bg/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-bg via-transparent to-brand-bg opacity-80" />
+      </div>
+
+      {/* Animated Gradient Decor */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center opacity-40 mix-blend-screen pointer-events-none">
         <motion.div 
           animate={{ 
             rotate: [0, 360],
             scale: [1, 1.2, 1]
           }}
           transition={{ 
-            duration: 20, 
-            repeat: Infinity,
-            ease: "linear" 
-          }}
-          className="absolute w-[600px] h-[600px] bg-brand-gold/30 rounded-full blur-[120px] mix-blend-screen"
-        />
-        <motion.div 
-          animate={{ 
-            rotate: [360, 0],
-            scale: [1, 1.3, 1]
-          }}
-          transition={{ 
             duration: 25, 
             repeat: Infinity,
             ease: "linear" 
           }}
-          className="absolute w-[700px] h-[500px] bg-[#1A1F33]/80 rounded-[40%] blur-[120px] mix-blend-screen -ml-40"
+          className="absolute w-[800px] h-[800px] bg-brand-gold/20 rounded-full blur-[120px]"
         />
       </div>
 

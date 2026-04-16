@@ -24,7 +24,7 @@ function useCountUp(target: number, duration = 1800) {
           }, 16);
         }
       }, 
-      { threshold: 0.5 }
+      { threshold: 0.15 }
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -54,7 +54,7 @@ export default function Stats() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, margin: "-20px" }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x divide-brand-gold/20"
         >

@@ -22,13 +22,27 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-24 bg-brand-bg">
-      <div className="max-w-[700px] mx-auto px-6">
+    <section id="faq" className="py-24 bg-brand-bg relative overflow-hidden">
+      {/* Background Video Layer */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="w-full h-full object-cover opacity-20 grayscale brightness-75"
+        >
+          <source src="/videos/faq-bg.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-bg via-brand-bg/40 to-brand-bg" />
+      </div>
+
+      <div className="max-w-[700px] mx-auto px-6 relative z-10">
         
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, margin: "-10px" }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >

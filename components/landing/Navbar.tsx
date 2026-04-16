@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { label: "Услуги", href: "#services" },
   { label: "О нас", href: "#about" },
   { label: "Команда", href: "#team" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Вопросы", href: "#faq" },
   { label: "Контакты", href: "#contact" },
 ];
 
@@ -42,11 +42,12 @@ export default function Navbar() {
       >
         <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <Scale className="w-5 h-5 text-brand-gold transition-transform group-hover:scale-110" />
-            <span className="font-display text-2xl tracking-wide font-semibold text-brand-text">
-              Outsource Legal
-            </span>
+          <a href="#" className="flex items-center group">
+            <img 
+              src="/images/logo.png" 
+              alt="Аутсорсинг VERNO" 
+              className="h-7 w-auto object-contain transition-transform group-hover:scale-105" 
+            />
           </a>
 
           {/* Desktop Nav */}
@@ -81,41 +82,59 @@ export default function Navbar() {
       {/* Mobile Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "tween", duration: 0.3 }}
-            className="fixed inset-0 z-[60] bg-brand-surface flex flex-col h-[100dvh]"
-          >
-            <div className="flex justify-end p-6 h-20 items-center">
-              <button
-                className="p-2 text-brand-text"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-            <nav className="flex flex-col items-center justify-center flex-1 gap-8 pb-20">
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
+          <>
+            {/* Backdrop Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setMobileMenuOpen(false)}
+              className="fixed inset-0 z-[55] bg-brand-bg/60 backdrop-blur-sm lg:hidden"
+            />
+            
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="fixed top-0 right-0 z-[60] w-[80%] max-w-sm bg-brand-surface flex flex-col h-[100dvh] shadow-2xl border-l border-brand-gold/20"
+            >
+              <div className="flex justify-end p-6 h-20 items-center">
+                <button
+                  className="p-2 text-brand-text hover:text-brand-gold transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="font-display text-3xl text-brand-text hover:text-brand-gold transition-colors"
                 >
-                  {link.label}
-                </a>
-              ))}
-              <a
-                href="#contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="mt-4 px-8 py-3 bg-brand-gold text-brand-bg font-semibold rounded text-lg"
-              >
-                Бесплатная Консультация →
-              </a>
-            </nav>
-          </motion.div>
+                  <X className="w-8 h-8" />
+                </button>
+              </div>
+
+              <nav className="flex flex-col items-center justify-center flex-1 gap-8 pb-20">
+                {NAV_LINKS.map((link, idx) => (
+                  <motion.a
+                    key={link.label}
+                    href={link.href}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 + idx * 0.05 }}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="font-display text-4xl text-brand-text hover:text-brand-gold transition-colors"
+                  >
+                    {link.label}
+                  </motion.a>
+                ))}
+                <motion.a
+                  href="#contact"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="mt-4 px-10 py-4 bg-brand-gold text-brand-bg font-semibold rounded text-xl shadow-lg ring-4 ring-brand-gold/10"
+                >
+                  Консультация →
+                </motion.a>
+              </nav>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>

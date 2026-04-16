@@ -41,7 +41,7 @@ export default function ContactForm() {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, margin: "-10px" }}
           transition={{ duration: 0.65, ease: "easeOut" }}
         >
           <h2 className="font-display text-5xl md:text-6xl font-semibold text-brand-text mb-6">
@@ -58,8 +58,8 @@ export default function ContactForm() {
                 <Phone className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-sm text-brand-muted">Phone</p>
-                <a href="tel:+77777777777" className="font-semibold hover:text-brand-gold transition-colors">+7 (777) 777-77-77</a>
+                <p className="text-sm text-brand-muted">Телефон</p>
+                <a href="tel:+77002676081" className="font-semibold hover:text-brand-gold transition-colors">+7 (700) 267-60-81</a>
               </div>
             </div>
             <div className="flex items-center gap-4 text-brand-text">
@@ -68,7 +68,7 @@ export default function ContactForm() {
               </div>
               <div>
                 <p className="text-sm text-brand-muted">Email</p>
-                <a href="mailto:contact@outsourcelegal.kz" className="font-semibold hover:text-brand-gold transition-colors">contact@outsourcelegal.kz</a>
+                <a href="mailto:vernokz@list.ru" className="font-semibold hover:text-brand-gold transition-colors">vernokz@list.ru</a>
               </div>
             </div>
             <div className="flex items-center gap-4 text-brand-text">
@@ -76,8 +76,8 @@ export default function ContactForm() {
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-sm text-brand-muted">Location</p>
-                <span className="font-semibold border-b border-dashed border-brand-gold/40">Kazakhstan</span>
+                <p className="text-sm text-brand-muted">Местоположение</p>
+                <span className="font-semibold border-b border-dashed border-brand-gold/40">Казахстан, г.Алматы, 11-й микрорайон, дом 4</span>
               </div>
             </div>
           </div>
@@ -87,7 +87,7 @@ export default function ContactForm() {
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, margin: "-10px" }}
           transition={{ duration: 0.65, ease: "easeOut", delay: 0.1 }}
           className="relative"
         >
@@ -151,7 +151,7 @@ export default function ContactForm() {
                       type="email"
                       aria-label="Адрес Email"
                       className="w-full bg-brand-elevated border border-brand-border rounded-lg px-4 py-3 text-brand-text focus:outline-none focus:border-brand-gold/50 focus:ring-1 focus:ring-brand-gold/50 transition-all placeholder:text-brand-muted/50"
-                      placeholder="ivan@example.com"
+                      placeholder="ivan@mail.ru"
                       disabled={status === "loading"}
                     />
                   </div>
@@ -163,11 +163,12 @@ export default function ContactForm() {
                     id="service"
                     name="service"
                     required
+                    defaultValue=""
                     aria-label="Интересующая услуга"
                     className="w-full bg-brand-elevated border border-brand-border rounded-lg px-4 py-3 text-brand-text focus:outline-none focus:border-brand-gold/50 focus:ring-1 focus:ring-brand-gold/50 transition-all appearance-none"
                     disabled={status === "loading"}
                   >
-                    <option value="" disabled selected>Выберите вариант</option>
+                    <option value="" disabled>Выберите вариант</option>
                     <option value="Юридические услуги">Юридические услуги</option>
                     <option value="Бухгалтерские услуги">Бухгалтерские услуги</option>
                     <option value="Открытие ТОО / ИП">Открытие ТОО / ИП</option>
