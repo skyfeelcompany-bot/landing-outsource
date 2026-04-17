@@ -78,12 +78,12 @@ export default function WhyUs() {
             </p>
             <div className="flex items-center gap-6">
               <div className="flex flex-col">
-                <span className="text-3xl font-display font-bold text-brand-gold">10+</span>
+                <span className="text-3xl font-display font-bold text-brand-gold">5+</span>
                 <span className="text-xs uppercase tracking-wider text-brand-muted">Лет экспертизы</span>
               </div>
               <div className="w-[1px] h-10 bg-brand-border" />
               <div className="flex flex-col">
-                <span className="text-3xl font-display font-bold text-brand-gold">500+</span>
+                <span className="text-3xl font-display font-bold text-brand-gold">200+</span>
                 <span className="text-xs uppercase tracking-wider text-brand-muted">Решенных дел</span>
               </div>
             </div>
