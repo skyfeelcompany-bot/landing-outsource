@@ -13,8 +13,8 @@ export default function Footer() {
             <a href="#" className="mb-6 inline-flex">
               <img 
                 src="/images/logo.png" 
-                alt="Аутсорсинг VERNO" 
-                className="h-8 w-auto object-contain" 
+                alt="VERNO-GROUP" 
+                className="h-12 w-auto object-contain" 
               />
             </a>
             <p className="text-brand-muted mb-8 max-w-sm leading-relaxed">
@@ -88,7 +88,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-brand-border/50 text-center md:flex md:justify-between md:text-left">
           <p className="text-sm text-brand-muted mb-4 md:mb-0">
-            © {currentYear} Аутсорсинг VERNO. Все права защищены.
+            © {currentYear} VERNO-GROUP. Все права защищены.
           </p>
           <div className="text-sm text-brand-muted/60">
             Право и учет нового поколения.

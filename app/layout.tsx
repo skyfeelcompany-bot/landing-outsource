@@ -17,8 +17,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://outsourcelegal.kz"),
   title: {
-    default: "Аутсорсинг Юридических и Бухгалтерских Услуг | Аутсорсинг VERNO",
-    template: "%s | Аутсорсинг VERNO",
+    default: "Аутсорсинг Юридических и Бухгалтерских Услуг | VERNO-GROUP",
+    template: "%s | VERNO-GROUP",
   },
   description: "Комплексная правовая защита и оптимизация бухгалтерии на каждой стадии. Профессиональные юридические и бухгалтерские услуги для бизнеса и частных лиц в Казахстане.",
   keywords: ["юридические услуги", "бухгалтерские услуги", "аутсорсинг", "Казахстан", "открытие ТОО", "налоговая оптимизация", "взыскание задолженности", "юрист", "бухгалтер"],
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Аутсорсинг Юридических и Бухгалтерских Услуг",
     description: "Комплексная правовая защита и оптимизация бухгалтерии на каждой стадии.",
     url: "/",
-    siteName: "Аутсорсинг VERNO",
+    siteName: "VERNO-GROUP",
     locale: "ru_RU",
     type: "website",
   },
@@ -65,7 +65,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LegalService",
-              "name": "Аутсорсинг VERNO",
+              "name": "VERNO-GROUP",
               "image": "https://outsourcelegal.kz/logo.png",
               "description": "Комплексная правовая защита и оптимизация бухгалтерии на каждой стадии.",
               "address": {

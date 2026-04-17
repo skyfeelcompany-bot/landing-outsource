@@ -45,8 +45,8 @@ export default function Navbar() {
           <a href="#" className="flex items-center group">
             <img 
               src="/images/logo.png" 
-              alt="Аутсорсинг VERNO" 
-              className="h-7 w-auto object-contain transition-transform group-hover:scale-105" 
+              alt="VERNO-GROUP" 
+              className="h-10 w-auto object-contain transition-transform group-hover:scale-105" 
             />
           </a>
 

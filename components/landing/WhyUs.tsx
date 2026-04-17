@@ -47,7 +47,7 @@ export default function WhyUs() {
             <div className="relative z-10 rounded-2xl overflow-hidden border border-brand-gold/20 shadow-[0_0_40px_rgba(201,168,76,0.15)] group">
               <Image 
                 src="/images/about-us.png" 
-                alt="Профессиональная команда Аутсорсинг VERNO" 
+                alt="Профессиональная команда VERNO-GROUP" 
                 width={800} 
                 height={500} 
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
@@ -72,7 +72,7 @@ export default function WhyUs() {
               Мы не просто оказываем услуги — мы <span className="text-brand-gold font-italic">создаем системы</span> правовой защиты.
             </h2>
             <p className="text-lg text-brand-muted leading-relaxed mb-8">
-              Аутсорсинг VERNO объединяет глубокую юридическую экспертизу и точный бухгалтерский учет в единый механизм. 
+              VERNO-GROUP объединяет глубокую юридическую экспертизу и точный бухгалтерский учет в единый механизм. 
               Мы специализируемся на сопровождении сложных финансовых институтов, таких как МФО и коллекторские агентства, 
               обеспечивая им полную безопасность перед лицом регуляторов и судов.
             </p>
