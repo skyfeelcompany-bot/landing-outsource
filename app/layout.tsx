@@ -14,8 +14,14 @@ const inter = Inter({
   variable: "--font-body",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL 
+  ? `https://${process.env.NEXT_PUBLIC_SITE_URL.replace(/^https?:\/\//, '')}` 
+  : process.env.NEXT_PUBLIC_VERCEL_URL 
+    ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` 
+    : "https://landing-outsource.vercel.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://landing-outsource.vercel.app"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Аутсорсинг Юридических и Бухгалтерских Услуг | VERNO-GROUP",
     template: "%s | VERNO-GROUP",
@@ -82,7 +88,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LegalService",
               "name": "VERNO-GROUP",
-              "image": "https://landing-outsource.vercel.app/images/logo.png",
+              "image": `${siteUrl}/images/logo.png`,
               "description": "Комплексная правовая защита и оптимизация бухгалтерии на каждой стадии.",
               "address": {
                 "@type": "PostalAddress",
@@ -90,7 +96,7 @@ export default function RootLayout({
               },
               "telephone": "+77080048192",
               "email": "info@verno-group.kz",
-              "url": "https://landing-outsource.vercel.app",
+              "url": siteUrl,
               "priceRange": "$$"
             })
           }}
