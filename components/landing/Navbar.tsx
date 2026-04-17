@@ -46,7 +46,7 @@ export default function Navbar() {
             <img 
               src="/images/logo.png" 
               alt="VERNO-GROUP" 
-              className="h-10 w-auto object-contain transition-transform group-hover:scale-105" 
+              className="h-12 w-auto object-contain transition-transform group-hover:scale-105" 
             />
           </a>
 

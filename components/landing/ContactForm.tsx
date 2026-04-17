@@ -59,7 +59,7 @@ export default function ContactForm() {
               </div>
               <div>
                 <p className="text-sm text-brand-muted">Телефон</p>
-                <a href="tel:+77002676081" className="font-semibold hover:text-brand-gold transition-colors">+7 (700) 267-60-81</a>
+                <a href="tel:+77080048192" className="font-semibold hover:text-brand-gold transition-colors">+7 (708) 004-81-92</a>
               </div>
             </div>
             <div className="flex items-center gap-4 text-brand-text">
@@ -68,7 +68,7 @@ export default function ContactForm() {
               </div>
               <div>
                 <p className="text-sm text-brand-muted">Email</p>
-                <a href="mailto:vernokz@list.ru" className="font-semibold hover:text-brand-gold transition-colors">vernokz@list.ru</a>
+                <a href="mailto:info@verno-group.kz" className="font-semibold hover:text-brand-gold transition-colors">info@verno-group.kz</a>
               </div>
             </div>
             <div className="flex items-center gap-4 text-brand-text">
@@ -77,7 +77,7 @@ export default function ContactForm() {
               </div>
               <div>
                 <p className="text-sm text-brand-muted">Местоположение</p>
-                <span className="font-semibold border-b border-dashed border-brand-gold/40">Казахстан, г.Алматы, 11-й микрорайон, дом 4</span>
+                <span className="font-semibold border-b border-dashed border-brand-gold/40">Казахстан, г. Алматы</span>
               </div>
             </div>
           </div>

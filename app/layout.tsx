@@ -46,6 +46,13 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  icons: {
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/icon.svg',
+  },
 };
 
 export default function RootLayout({
@@ -72,8 +79,8 @@ export default function RootLayout({
                 "@type": "PostalAddress",
                 "addressCountry": "KZ"
               },
-              "telephone": "+77002676081",
-              "email": "vernokz@list.ru",
+              "telephone": "+77080048192",
+              "email": "info@verno-group.kz",
               "url": "https://outsourcelegal.kz",
               "priceRange": "$$"
             })

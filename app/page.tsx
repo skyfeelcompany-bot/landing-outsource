@@ -13,6 +13,8 @@ import FAQ from "@/components/landing/FAQ";
 import ContactForm from "@/components/landing/ContactForm";
 import CTABanner from "@/components/landing/CTABanner";
 import Footer from "@/components/landing/Footer";
+import BackToTop from "@/components/landing/BackToTop";
+import FloatingContact from "@/components/landing/FloatingContact";
 
 export default async function LandingPage() {
   'use cache';
@@ -39,6 +41,8 @@ export default async function LandingPage() {
         </Suspense>
       </main>
       <Footer />
+      <BackToTop />
+      <FloatingContact />
     </>
   );
 }
