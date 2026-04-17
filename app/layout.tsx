@@ -15,7 +15,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://outsourcelegal.kz"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://landing-outsource.vercel.app"),
   title: {
     default: "Аутсорсинг Юридических и Бухгалтерских Услуг | VERNO-GROUP",
     template: "%s | VERNO-GROUP",
@@ -29,11 +29,20 @@ export const metadata: Metadata = {
     siteName: "VERNO-GROUP",
     locale: "ru_RU",
     type: "website",
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'VERNO-GROUP Logo',
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Аутсорсинг Юридических и Бухгалтерских Услуг",
     description: "Комплексная правовая защита и оптимизация бухгалтерии на каждой стадии.",
+    images: ['/twitter-image.png'],
   },
   robots: {
     index: true,
@@ -73,7 +82,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LegalService",
               "name": "VERNO-GROUP",
-              "image": "https://outsourcelegal.kz/logo.png",
+              "image": "https://landing-outsource.vercel.app/images/logo.png",
               "description": "Комплексная правовая защита и оптимизация бухгалтерии на каждой стадии.",
               "address": {
                 "@type": "PostalAddress",
@@ -81,7 +90,7 @@ export default function RootLayout({
               },
               "telephone": "+77080048192",
               "email": "info@verno-group.kz",
-              "url": "https://outsourcelegal.kz",
+              "url": "https://landing-outsource.vercel.app",
               "priceRange": "$$"
             })
           }}
