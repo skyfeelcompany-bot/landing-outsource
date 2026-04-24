@@ -18,7 +18,7 @@ export async function submitLead(rawData: unknown) {
   const validated = leadSchema.safeParse(rawData);
   
   if (!validated.success) {
-    const errorMsg = validated.error.errors[0]?.message || "Ошибка валидации";
+    const errorMsg = validated.error.issues?.[0]?.message || "Ошибка валидации";
     console.warn("Lead validation failed:", validated.error.format());
     throw new Error(errorMsg);
   }
@@ -34,5 +34,5 @@ export async function submitLead(rawData: unknown) {
     throw new Error("Не удалось сохранить заявку. Пожалуйста, попробуйте позже.");
   }
   
-  revalidateTag('leads');
+  revalidateTag('leads', 'hours');
 }
