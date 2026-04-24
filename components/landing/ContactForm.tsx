@@ -16,11 +16,12 @@ export default function ContactForm() {
 
     const formData = new FormData(e.currentTarget);
     const data = {
-      name: formData.get("name") as string,
-      phone: formData.get("phone") as string,
-      email: formData.get("email") as string,
+      name: (formData.get("name") as string).trim(),
+      phone: (formData.get("phone") as string).trim(),
+      email: (formData.get("email") as string).trim(),
       service: formData.get("service") as string,
-      message: formData.get("message") as string,
+      message: (formData.get("message") as string).trim(),
+      website: formData.get("website") as string,
     };
 
     try {
@@ -115,6 +116,16 @@ export default function ContactForm() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                <div className="hidden" aria-hidden="true">
+                  <input
+                    id="website"
+                    name="website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-brand-text mb-2">Ваше Имя *</label>
                   <input

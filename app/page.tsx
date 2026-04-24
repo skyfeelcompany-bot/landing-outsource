@@ -10,6 +10,7 @@ import Stats from "@/components/landing/Stats";
 import Team from "@/components/landing/Team";
 import HowItWorks from "@/components/landing/HowItWorks";
 import FAQ from "@/components/landing/FAQ";
+import Quiz from "@/components/landing/Quiz";
 import ContactForm from "@/components/landing/ContactForm";
 import CTABanner from "@/components/landing/CTABanner";
 import Footer from "@/components/landing/Footer";
@@ -33,6 +34,7 @@ export default async function LandingPage() {
         <Team />
         <HowItWorks />
         <FAQ />
+        <Quiz />
         <ContactForm />
         <CTABanner />
         {/* Suspense is required for any future dynamic request-time components like user sessions, per SKILL.md */}
