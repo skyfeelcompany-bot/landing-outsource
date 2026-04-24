@@ -121,17 +121,17 @@ export default function Quiz() {
                       <button
                         key={idx}
                         onClick={() => handleOptionSelect(option)}
-                        className={`group relative flex items-center justify-between p-5 rounded-xl border transition-all duration-300 text-left cursor-pointer
+                        className={`group relative flex items-center justify-between p-5 rounded-xl border transition-all duration-300 text-left cursor-pointer gap-4
                           ${answers[currentStep] === option 
                             ? "bg-brand-gold/10 border-brand-gold shadow-[0_0_15px_rgba(212,175,55,0.1)]" 
                             : "bg-brand-elevated border-brand-border hover:border-brand-gold/50 hover:bg-brand-elevated/80"
                           }
                         `}
                       >
-                         <span className={`text-sm md:text-base font-medium transition-colors ${answers[currentStep] === option ? "text-brand-gold" : "text-brand-text/90"}`}>
+                         <span className={`text-sm md:text-base font-medium transition-colors flex-1 pr-2 ${answers[currentStep] === option ? "text-brand-gold" : "text-brand-text/90"}`}>
                            {option}
                          </span>
-                         <div className={`w-6 h-6 rounded-full border flex items-center justify-center transition-colors 
+                         <div className={`w-6 h-6 rounded-full border flex items-center justify-center transition-colors shrink-0
                            ${answers[currentStep] === option 
                              ? "border-brand-gold bg-brand-gold text-brand-bg" 
                              : "border-brand-muted/40 text-transparent"
