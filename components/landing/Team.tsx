@@ -13,14 +13,6 @@ const TEAM = [
     pdfUrl: "/docs/asyl.pdf",
   },
   {
-    name: "Руслан",
-    image: "/images/ruslan.png",
-    role: "Специалист по праву",
-    badge: "Право",
-    bio: "Специализируется на исполнительном производстве, процессуальной документации и защите клиентов от действий регуляторов.",
-    pdfUrl: "/docs/ruslan.pdf",
-  },
-  {
     name: "Канагат",
     image: "/images/kanagat.png",
     role: "Юрист",
@@ -48,7 +40,7 @@ export default function Team() {
         <img 
           src="/images/team-bg-v2.jpg" 
           alt="Team background" 
-          className="w-full h-full object-cover blur-[1px] opacity-60 grayscale-[10%]"
+          className="w-full h-full object-cover object-[center_15%] blur-[1px] opacity-60 grayscale-[10%]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-brand-bg via-transparent to-brand-bg" />
       </div>
@@ -74,7 +66,7 @@ export default function Team() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-20px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-fr"
+          className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-6 auto-rows-fr"
         >
           {TEAM.map((member) => (
             <motion.div

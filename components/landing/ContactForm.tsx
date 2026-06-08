@@ -25,12 +25,17 @@ export default function ContactForm() {
     };
 
     try {
-      await submitLead(data);
-      setStatus("success");
+      const res = await submitLead(data);
+      if (res.success) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+        setErrorMsg(res.error);
+      }
     } catch (err: unknown) {
       console.error(err);
       setStatus("error");
-      setErrorMsg("Something went wrong. Please try again or call us directly.");
+      setErrorMsg("Не удалось отправить заявку. Пожалуйста, проверьте подключение или обратитесь напрямую.");
     }
   };
 
