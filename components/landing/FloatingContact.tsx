@@ -7,7 +7,7 @@ import { Phone, X } from "lucide-react";
 const CONTACTS = [
   {
     label: "WhatsApp",
-    href: "https://wa.me/77080048192",
+    href: "https://wa.me/77002676081",
     color: "bg-[#25D366]",
     icon: (
       <svg className="w-6 h-6 fill-white" viewBox="0 0 24 24">
@@ -17,7 +17,7 @@ const CONTACTS = [
   },
   {
     label: "Позвонить",
-    href: "tel:+77080048192",
+    href: "tel:+77002676081",
     color: "bg-gradient-to-br from-[#e6d27a] via-[#cbb44d] to-[#a8922f]",
     icon: <Phone className="w-5 h-5 text-white" />,
   },
@@ -56,7 +56,7 @@ export default function FloatingContact() {
       <AnimatePresence>
         {showHint && !isOpen && (
           <motion.a
-            href="https://wa.me/77080048192"
+            href="https://wa.me/77002676081"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 10 }}

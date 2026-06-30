@@ -65,7 +65,7 @@ export default function ContactForm() {
               </div>
               <div>
                 <p className="text-sm text-brand-muted">Телефон</p>
-                <a href="tel:+77080048192" className="font-semibold hover:text-brand-gold transition-colors">+7 (708) 004-81-92</a>
+                <a href="tel:+77002676081" className="font-semibold hover:text-brand-gold transition-colors">+7 (700) 267-60-81</a>
               </div>
             </div>
             <div className="flex items-center gap-4 text-brand-text">
