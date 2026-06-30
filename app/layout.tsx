@@ -23,6 +23,9 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Аутсорсинг Юридических и Бухгалтерских Услуг | VERNO-GROUP",
     template: "%s | VERNO-GROUP",
